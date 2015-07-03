@@ -64,9 +64,14 @@ DJANGO_APPS = (
     'django.contrib.redirects',
 )
 
+THIRD_PARTY_APPS = (
+    'storages',
+    'compressor',
+)
+
 LOCAL_APPS = ()
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,6 +143,7 @@ MEDIA_ROOT = BASE_DIR.child('media')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 STATIC_ROOT = BASE_DIR.child('assets')
@@ -147,6 +153,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     BASE_DIR.child('static'),
 )
+# django compress
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
+COMPRESS_ENABLED = True
+
+COMPRESS_ROOT = BASE_DIR.child('static')
 
 # Logging
 
