@@ -16,7 +16,11 @@ from unipath import Path
 
 from django.core.exceptions import ImproperlyConfigured
 
-with open("secrets.json") as f:
+BASE_DIR = Path(__file__).ancestor(3)
+
+secrets_path = BASE_DIR.child('config').child('settings', 'secrets.json')
+
+with open(secrets_path) as f:
     secrets = json.loads(f.read())
 
 
@@ -27,13 +31,11 @@ def get_secret(setting, secrets=secrets):
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
 
-BASE_DIR = Path(__file__).ancestor(3)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,6 +59,9 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.redirects',
 )
 
 LOCAL_APPS = ()
@@ -133,12 +138,12 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-STATIC_ROOT = BASE_DIR.child('static')
+STATIC_ROOT = BASE_DIR.child('assets')
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    BASE_DIR.child('assets')
+    BASE_DIR.child('static'),
 )
 
 # Logging
