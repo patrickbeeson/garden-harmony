@@ -17,14 +17,69 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="{% block view_type %}{% endblock view_type %}">
+    {% block nav %}
+    {% comment %}
+    <!-- NOTE: Hiding until we have a nav to display -->
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+            <h1 class="logo"><a href="{% url 'home' %}">Garden Harmony</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="#">Right Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#">Right Button Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+              <li class="active"><a href="#">Active link in dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    {% endcomment %}
+    {% endblock nav %}
+    {% block branding %}
+    <div class="row">
+        <div class="small-centered column">
+            <h1 class="text-center medium-text-left logo"><a href="{% url 'home' %}">Garden Harmony</a></h1>
+        </div>
+    </div>
+    {% endblock branding %}
     {% block content %}
     {% endblock content %}
+    {% block footer %}
+    <div id="footer">
+        <div class="small-12 small-centered columns">
+            <p class="text-center">&copy; {{ now|date:'Y' }} Garden Harmony. All rights reserved.</p>
+            <p class="text-center">Design by <a href="http://durangoproductive.com">Durango Productive</a>. Development by <a href="http://weaponize.it">weaponizeIT</a>.</p>
+        </div>
+    </div>
+    {% endblock footer %}
     {% block global_js %}
     {% compress js %}
     <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'bower_components/foundation/js/foundation.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'IM+Fell+DW+Pica::latin', 'Alegreya+Sans:300,700:latin', 'Patua+One::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); </script>
     {% endcompress %}
     {% endblock global_js %}
   </body>

@@ -1,0 +1,11 @@
+// Homepage-specific styles
+
+#intro-copy {
+    margin-top: 15px;
+    h2 {
+        font-family: $title-font;
+    }
+    p, li {
+        font-family: $body-font;
+    }
+}

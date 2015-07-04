@@ -57,3 +57,6 @@ node_modules/
 
 # secret files
 secrets.json
+
+# cache
+CACHE/
