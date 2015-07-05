@@ -7,14 +7,50 @@
 body {
 }
 
+// Links
+
 a {
     color: $dark-tan;
 }
 
-.logo {
-    font-family: $title-font;
-    padding: 10px 0px;
+a:hover {
+    color: darken($dark-tan, 20%)
 }
+
+// Navigation
+
+#branding-nav-container {
+    @media #{$medium-up} {
+        padding-bottom: 25px;
+    }
+}
+
+nav[role='navigation'] {
+    background-color: white;
+    .logo {
+        letter-spacing: 0.25rem;
+        font-family: $title-font;
+        text-transform: uppercase;
+        font-size: $h3-font-size;
+        @media #{$medium-up} {
+            font-size: $h3-font-size;
+        }
+        a {
+            text-align: center;
+            color: $dark-tan;
+            width: 100%;
+            @media #{$medium-up} {
+                text-align: inherit;
+                width: inherit;
+            }
+        }
+        a:hover {
+            color: darken($dark-tan, 20%)
+        }
+    }
+}
+
+// Footer
 
 #footer {
     font-family: $body-font;

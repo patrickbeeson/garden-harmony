@@ -19,45 +19,24 @@
   </head>
   <body class="{% block view_type %}{% endblock view_type %}">
     {% block nav %}
-    {% comment %}
-    <!-- NOTE: Hiding until we have a nav to display -->
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-            <h1 class="logo"><a href="{% url 'home' %}">Garden Harmony</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="active"><a href="#">Right Button Active</a></li>
-          <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-              <li class="active"><a href="#">Active link in dropdown</a></li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-    </nav>
-    {% endcomment %}
-    {% endblock nav %}
-    {% block branding %}
-    <div class="row">
-        <div class="small-centered column">
-            <h1 class="text-center medium-text-left logo"><a href="{% url 'home' %}">Garden Harmony</a></h1>
+    <div class="row small-collapse" id="branding-nav-container">
+        <div class="columns small-12 small-centered">
+            <nav class="top-bar" data-topbar role="navigation">
+              <ul class="title-area">
+                <li class="name">
+                    <h1 class="logo"><a href="{% url 'home' %}">Garden Harmony</a></h1>
+                </li>
+              </ul>
+            </nav>
         </div>
     </div>
-    {% endblock branding %}
+    {% endblock nav %}
     {% block content %}
     {% endblock content %}
     {% block footer %}
     <div id="footer">
         <div class="small-12 small-centered columns">
-            <p class="text-center">&copy; {{ now|date:'Y' }} Garden Harmony. All rights reserved.</p>
+            <p class="text-center">&copy; {% now "Y" %} Garden Harmony. All rights reserved.</p>
             <p class="text-center">Design by <a href="http://durangoproductive.com">Durango Productive</a>. Development by <a href="http://weaponize.it">weaponizeIT</a>.</p>
         </div>
     </div>
