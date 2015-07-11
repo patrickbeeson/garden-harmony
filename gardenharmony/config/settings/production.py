@@ -27,7 +27,7 @@ DATABASES = {
         'NAME': get_secret("DB_NAME"),
         'USER': 'gardenharmony',
         'PASSWORD': get_secret("DB_PASSWORD"),
-        'HOST': get_secret("DB_HOST"),
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
