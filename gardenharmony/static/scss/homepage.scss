@@ -6,10 +6,12 @@
     h2 {
         font-family: $title-font;
         font-size: $h4-font-size;
+        text-transform: uppercase;
     }
     h3 {
         font-family: $title-font;
         font-size: $h5-font-size;
+        text-transform: uppercase;
     }
     p, li, address {
         font-family: $body-font;
