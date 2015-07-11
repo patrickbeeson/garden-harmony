@@ -1,18 +1,19 @@
 {% extends 'base_generic.html' %}
+{% load static %}
 
 {% block title %}Garden Harmony | gardenharmonync.com{% endblock %}
 
 {% block view_type %}home{% endblock view_type %}
 
 {% block content %}
-<div class="row small-collapse medium-uncollapse" id="centerpiece-image">
+<div class="row small-collapse large-uncollapse" id="centerpiece-image">
     <div class="medium-12 text-center medium-centered columns">
-        <img src="http://placehold.it/640x480">
+        <img src="{% static 'img/front_gardens_centerpiece_lg.jpg' %}">
     </div>
 </div>
 
 <div class="row" id="intro-copy">
-    <div class="small-12 medium-10 medium-centered columns">
+    <div class="medium-8 large-8 small-centered medium-uncentered columns">
         <h2>About Justin Durango, founder of Garden Harmony</h2>
         <p>I am a local horticulturist, designer, and garden artist in the greater Raleigh area. I help local landowners cultivate beautiful, functional habitats.</p>
         <p>My intention is to make the greater Raleigh area more biologically diverse, healthy, artful, and efficient, one gardener at a time.</p>
@@ -23,6 +24,14 @@
             <li>Producing landscape designs for homeowners that elegantly utilize patterns from the natural world and produce beautiful, low-maintenance gardens, and balance the needs for human space with wildlife</li>
             <li>Organizing workshops, on site, for homeowners (and friends/family/neighbors) covering topics from arbor construction to growing zucchini</li>
         </ul>
+    </div>
+    <div class="medium-3 large-3 small-centered medium-uncentered columns">
+        <h3>Contact</h3>
+        <address>
+            Justin Durango<br>
+            <a href="tel:9198166476">(919) 816-6476</a><br>
+            <a href="mailto:justin@gardenharmonync.com">justin@gardenharmonync.com</a>
+        </address>
     </div>
 </div>
 {% endblock content %}

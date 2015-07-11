@@ -2,11 +2,16 @@
 
 #intro-copy {
     margin-top: 15px;
+    margin-bottom: 15px;
     h2 {
         font-family: $title-font;
         font-size: $h4-font-size;
     }
-    p, li {
+    h3 {
+        font-family: $title-font;
+        font-size: $h5-font-size;
+    }
+    p, li, address {
         font-family: $body-font;
     }
 }
