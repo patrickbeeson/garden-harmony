@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).ancestor(3)
 
 secrets_path = BASE_DIR.child('config').child('settings', 'secrets.json')
 
-with open("secrets.json") as f:
+with open(secrets_path) as f:
     secrets = json.loads(f.read())
 
 
