@@ -22,7 +22,7 @@ def get_secret(setting, secrets=secrets):
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['45.55.70.79', 'gardenharmony.com']
+ALLOWED_HOSTS = ['45.55.70.79', 'gardenharmonync.com']
 
 TIME_ZONE = 'America/New_York'
 
