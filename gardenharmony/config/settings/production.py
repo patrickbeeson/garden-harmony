@@ -36,3 +36,19 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+SERVER_EMAIL = 'admin@gardenharmonync.com'
+
+DEFAULT_FROM_EMAIL = 'webmaster@gardenharmonync.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.mailgun.org'
+
+EMAIL_HOST_USER = 'postmaster@mail.gardenharmonync.com'
+
+EMAIL_HOST_PASSWORD = get_secret("DB_PASSWORD")
+
+EMAIL_PORT = 587
