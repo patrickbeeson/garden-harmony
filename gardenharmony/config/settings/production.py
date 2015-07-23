@@ -49,6 +49,6 @@ EMAIL_HOST = 'smtp.mailgun.org'
 
 EMAIL_HOST_USER = 'postmaster@mail.gardenharmonync.com'
 
-EMAIL_HOST_PASSWORD = get_secret("DB_PASSWORD")
+EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
 
 EMAIL_PORT = 587
